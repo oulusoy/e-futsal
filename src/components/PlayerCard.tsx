@@ -7,16 +7,16 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
-import {Progress} from "@/components/ui/progress";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/ui/progress";
 import { ArrowUpIcon } from '@radix-ui/react-icons'
 
 export function PlayerCard() {
     return (
-        <Card className="w-[320px] shadow bg-cover bg-center border border-gray-500 rounded-lg"
-              style={{
-            backgroundImage: 'url("/src/assets/soccer_card_bg_no_border_red.png")',
-        }}>
+        <Card className="w-[280px] shadow bg-cover bg-center border border-gray-500 rounded-lg"
+            style={{
+                backgroundImage: 'url("/src/assets/soccer_card_bg_no_border_red.png")',
+            }}>
             <CardHeader className="grid grid-cols-9 text-center">
                 <span className="col-span-2">
                     <Avatar>
@@ -30,7 +30,7 @@ export function PlayerCard() {
                 </div>
             </CardHeader>
             <CardContent>
-                <div className="grid grid-cols-3 text-center mb-4">
+                <div className="grid grid-cols-3 text-center mb-1">
                     <div>
                         <CardTitle className="text-2xl font-bold">24</CardTitle>
                         <p className="text-xs text-muted-foreground">Age</p>
@@ -83,7 +83,6 @@ export function PlayerCard() {
                         <p className="mt-4">3.000.000</p>
                         <p className="text-xs text-muted-foreground">coin</p>
                     </div>
-
                 </div>
                 <div>
                     <ArrowUpIcon className="text-green-500 w-[35px] h-[35px]"></ArrowUpIcon>

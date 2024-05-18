@@ -48,12 +48,27 @@
     --ring: 142.4 71.8% 29.2%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.speech-bubble-left {
+  border-radius: 0 8px 8px 8px;
+  background: #a0d75c;
+  margin-top: 6px;
+  /* Top-left, top-right, bottom-right, bottom-left */
+}
+
+.speech-bubble-right {
+  border-radius: 8px 0px 8px 8px;
+  background: #45d5b8;
+  margin-top: 6px;
+  /* Top-left, top-right, bottom-right, bottom-left */
 }

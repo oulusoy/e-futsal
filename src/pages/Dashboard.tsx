@@ -1,16 +1,16 @@
 import { PageHeader, PageHeaderHeading } from "@/components/page-header";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {PlayerCard} from "@/components/PlayerCard";
-import {Button} from "@/components/ui/button";
-import {PlusCircledIcon} from "@radix-ui/react-icons";
-import {Popover, PopoverContent, PopoverTrigger} from "@/components/ui/popover";
-import {Player, PlayerSearchModal} from "@/components/PlayerSearchModal";
-import {Match} from "@/components/Match";
-import {useStore} from "@/store/store";
-import {useState} from "react";
+import { PlayerCard } from "@/components/PlayerCard";
+import { Button } from "@/components/ui/button";
+import { PlusCircledIcon } from "@radix-ui/react-icons";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Player, PlayerSearchModal } from "@/components/PlayerSearchModal";
+import { Match } from "@/components/Match";
+import { useStore } from "@/store/store";
+import { useState } from "react";
 
 export default function Dashboard() {
-    const {players} = useStore();
+    const { players } = useStore();
     const data = useState(players);
     return (
         <>
@@ -84,8 +84,48 @@ export default function Dashboard() {
                     </div>
                 </CardHeader>
             </Card>
-            <Card className="mt-4">
-                <Match></Match>
+            <Card className="mt-4 p-4">
+                <CardTitle>Last Matches</CardTitle>
+                <CardDescription>Sat, 01.04.2024</CardDescription>
+                <Match
+                    live={true}
+                    matchDate="02.03.2024"
+                    matchTime="19:00"
+                    teamHome="Borussia Dortmund"
+                    teamAway="Bayern Munich"
+                    scoreHome={2}
+                    scoreAway={1}
+                    timeline={[{ time: '45', team: 'Borussia Dortmund', player: 'Haaland', action: 'scored' },
+                    { time: '75', team: 'Bayern Munich', player: 'Haaland', action: 'scored' },
+                    { time: '85', team: 'Bayern Munich', player: 'Haaland', action: 'scored' },
+                    ]}
+                    squadHome={['Haaland', 'Reus', 'Hummels']}
+                    squadAway={['Lewandowski', 'Müller', 'Neuer']}
+                />
+                <Match
+                    live={false}
+                    matchDate="02.03.2024"
+                    matchTime="18:00"
+                    teamHome="Hamburger Sv"
+                    teamAway="St. Pauli"
+                    scoreHome={3}
+                    scoreAway={6}
+                    timeline={[{ time: '30', team: 'St. Pauli', player: 'Burgstaller', action: 'scored' }]}
+                    squadHome={['Ulreich', 'Leibold', 'Jatta']}
+                    squadAway={['Burgstaller', 'Kyereh', 'Paqarada']}
+                />
+                <Match
+                    live={false}
+                    matchDate="01.03.2024"
+                    matchTime="End"
+                    teamHome="Hamburger Sv"
+                    teamAway="St. Pauli"
+                    scoreHome={3}
+                    scoreAway={6}
+                    timeline={[{ time: '75', team: 'Hamburger Sv', player: 'Terodde', action: 'scored' }]}
+                    squadHome={['Ulreich', 'Leibold', 'Jatta']}
+                    squadAway={['Burgstaller', 'Kyereh', 'Paqarada']}
+                />
             </Card>
         </>
     )
